@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pomodoro/pages/pomodoro.dart';
-import 'package:pomodoro/store/contador.store.dart';
 
 void main() {
   runApp(const MyApp());
