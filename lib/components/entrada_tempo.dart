@@ -19,7 +19,7 @@ class EntradaTempo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = Provider.of<PomodoroStore>(context);
-    final colorStatus = store.estaDescansando() ? Colors.red : Colors.green;
+    final colorStatus = store.estaTrabalhando() ? Colors.red : Colors.green;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
