@@ -2,6 +2,8 @@ import 'package:mobx/mobx.dart';
 
 part 'pomodoro.store.g.dart';
 
+enum TipoIntervalo { trabalho, descanso }
+
 abstract class _PomodoroStore with Store {
   @observable
   int tempoTrabalho = 2;
@@ -17,6 +19,9 @@ abstract class _PomodoroStore with Store {
 
   @observable
   bool iniciado = false;
+
+  @observable
+  TipoIntervalo tipoIntervalo = TipoIntervalo.descanso;
 
   @action
   void incrementarTempoTrabalho() {
@@ -51,6 +56,14 @@ abstract class _PomodoroStore with Store {
   @action
   void reiniciar() {
     iniciado = false;
+  }
+
+  bool estaTrabalhando() {
+    return tipoIntervalo == TipoIntervalo.trabalho;
+  }
+
+  bool estaDescansando() {
+    return tipoIntervalo == TipoIntervalo.descanso;
   }
 }
 
